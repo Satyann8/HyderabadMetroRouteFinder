@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3">
+      <select class="form-select-xs" (change)="setUserSelectionFrom($event)" aria-label="hello">
+        <option value="">From Station</option>
+        <option *ngFor="let station of stations.sort()" [value]="station">
+          {{ station }}
+        </option>
+      </select>
+      <br/>
+      <select class="form-select-xs" (change)="setUserSelectionTo($event)">
+        <option value="">To Station</option>
+        <option *ngFor="let station of stations.sort()" [value]="station">
+          {{ station }}
+        </option>
+      </select>
+    </div>
+    <div class="col-lg-6">
+      <blockquote><p *ngIf="message!=''" [ngClass]="conditionalClassforResultDisplay">{{message}}</p></blockquote>
+    </div>
+    <div class="col-lg-3">
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <button class="btn btn-primary rounded-pill px-3" id="btn1" (click)="getRoute()">Get Route</button>
+    </div>
+    <div class="col-xs-9"></div>
+      
+    
+    
+  </div>
+  
+</div>
